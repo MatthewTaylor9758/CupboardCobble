@@ -1,12 +1,15 @@
 from flask import Flask
 from config import Config
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy (don't need this since I am going to import
+# the SQLAlchemy object and the Model classes I create, based on the base "Modal" class
+# provided by the SQLAlchemy object, into here) The line below is the new line used
+from models import db
 
 app = Flask(__name__)
 
 app.config.from_object(Config)
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app) (don't need this for the same reason as on line 3-5)
 
 print('the secret key is: ', app.config['SECRET_KEY'])
 
