@@ -11,6 +11,13 @@ class Users(db.Model):
     email = db.Column(db.String(255), nullable=False, unique=True)
     # password to come tomorrow when I go over werkzeug security and password hashing
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email
+        }
+
 class Foods(db.Model):
     # possibly use a merge sort to find the correct foods faster?
     id = db.Column(db.Integer, primary_key=True)
@@ -18,8 +25,20 @@ class Foods(db.Model):
     amount = db.Column(db.String, nullable=False)
     pantry_id = db.Column(db.Integer, db.ForeignKey('pantries.id'), nullable=False)
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'amount': self.amount,
+            'pantry_id': self.pantry_id
+        }
+
 class Pantry(db.Model):
     __tablename__ = 'Pantries'
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False, unique=True)
+
+    def to_dict(self):
+        'id': self.id,
+        'user_id': self.user_id
