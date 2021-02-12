@@ -12,9 +12,11 @@ class Users(db.Model):
     # password to come tomorrow when I go over werkzeug security and password hashing
 
 class Foods(db.Model):
+    # possibly use a merge sort to find the correct foods faster?
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False, unique=True)
     amount = db.Column(db.String, nullable=False)
+    pantry_id = db.Column(db.Integer, db.ForeignKey('pantries.id'), nullable=False)
 
 class Pantry(db.Model):
     __tablename__ = 'Pantries'
