@@ -21,7 +21,7 @@ class Users(db.Model):
 class Foods(db.Model):
     # possibly use a merge sort to find the correct foods faster?
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False, unique=True)
+    name = db.Column(db.String, nullable=False)
     amount = db.Column(db.String, nullable=False)
     pantry_id = db.Column(db.Integer, db.ForeignKey('pantries.id'), nullable=False)
 
