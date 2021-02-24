@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 # create the SQLAlchemy object and save it as db
 db = SQLAlchemy()
 
-class Users(db.Model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
@@ -18,7 +18,7 @@ class Users(db.Model):
             'email': self.email
         }
 
-class Foods(db.Model):
+class Food(db.Model):
     # possibly use a merge sort to find the correct foods faster?
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)

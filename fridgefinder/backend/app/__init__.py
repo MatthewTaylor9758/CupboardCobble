@@ -1,13 +1,17 @@
+import os
 from flask import Flask
 from config import Config
+from flask_migrate import Migrate
 # from flask_sqlalchemy import SQLAlchemy (don't need this since I am going to import
-# the SQLAlchemy object and the Model classes I create, based on the base "Modal" class
+# the SQLAlchemy object and the Model classes I create, based on the base "Model" class
 # provided by the SQLAlchemy object, into here) The line below is the new line used
 from models import db
 
 app = Flask(__name__)
 
 app.config.from_object(Config)
+db.init_app(app)
+Migrate(app, db)
 
 # db = SQLAlchemy(app) (don't need this for the same reason as on line 3-5)
 

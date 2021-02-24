@@ -1,6 +1,7 @@
 import os
 
 class Config(object):
-    GREETING = 'Salutations, superior students!'
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'default-key-for-devs'
-    SQLALCHEMY_DATABASE_URI = postgresql://test_user:password@localhost/fridge_world
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_ECHO=True
