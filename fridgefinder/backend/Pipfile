@@ -11,6 +11,7 @@ python-dotenv = "~=0.13"
 psycopg2-binary = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
+alembic = "*"
 
 [requires]
 python_version = "3.8"
