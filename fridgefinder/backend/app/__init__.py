@@ -1,11 +1,11 @@
-import os
 from flask import Flask
 from config import Config
 from flask_migrate import Migrate
+import os
 # from flask_sqlalchemy import SQLAlchemy (don't need this since I am going to import
 # the SQLAlchemy object and the Model classes I create, based on the base "Model" class
 # provided by the SQLAlchemy object, into here) The line below is the new line used
-from models import db
+from .models import db, User, Food, Pantry
 
 app = Flask(__name__)
 

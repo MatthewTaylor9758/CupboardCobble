@@ -1,12 +1,14 @@
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security inport generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 # from werkzeug.security import generate_password_hash, check_password_hash FOR TOMORROW
 
 # create the SQLAlchemy object and save it as db
 db = SQLAlchemy()
 
 class User(db.Model):
+    __tablename__='users'
+
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
@@ -23,7 +25,7 @@ class User(db.Model):
     def password(self):
         return self.hashed_password
 
-    @password_setter
+    @password.setter
     def password(self, password):
         self.hashed_password = generate_pasword_hash(password)
 
@@ -31,6 +33,8 @@ class User(db.Model):
         return check_password_hash(self.password, password)
 
 class Food(db.Model):
+    __tablename__='foods'
+
     # possibly use a merge sort to find the correct foods faster?
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
@@ -46,11 +50,13 @@ class Food(db.Model):
         }
 
 class Pantry(db.Model):
-    __tablename__ = 'Pantries'
+    __tablename__ = 'pantries'
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False, unique=True)
 
     def to_dict(self):
-        'id': self.id,
-        'user_id': self.user_id
+        return {
+            'id': self.id,
+            'user_id': self.user_id
+        }
