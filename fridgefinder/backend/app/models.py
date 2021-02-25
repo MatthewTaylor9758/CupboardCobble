@@ -1,5 +1,6 @@
 from flask import flask
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security inport generate_password_hash, check_password_hash
 # from werkzeug.security import generate_password_hash, check_password_hash FOR TOMORROW
 
 # create the SQLAlchemy object and save it as db
@@ -17,6 +18,17 @@ class User(db.Model):
             'username': self.username,
             'email': self.email
         }
+
+    @property
+    def password(self):
+        return self.hashed_password
+
+    @password_setter
+    def password(self, password):
+        self.hashed_password = generate_pasword_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
 
 class Food(db.Model):
     # possibly use a merge sort to find the correct foods faster?
