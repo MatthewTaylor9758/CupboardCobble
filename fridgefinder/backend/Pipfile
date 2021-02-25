@@ -14,6 +14,7 @@ flask-sqlalchemy = "*"
 alembic = "*"
 flask-migrate = "*"
 werkzeug = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
