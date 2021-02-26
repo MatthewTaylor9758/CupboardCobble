@@ -9,8 +9,8 @@ RUN ["pip", "install", "-r", "requirements.txt"]
 # Move our react build for Flask to serve
 # Use cp here because we're copying files inside our working directory, not from
 # our host machine.
-RUN ["cp", "-r", "app/static/static/js", "app/static"]
-RUN ["cp", "-r", "app/static/static/css", "app/static"]
+RUN ["cp", "-r", "app/static/build/static/js", "app/static"]
+RUN ["cp", "-r", "app/static/build/static/css", "app/static"]
 
 # Setup Flask environment
 ENV FLASK_APP=app
