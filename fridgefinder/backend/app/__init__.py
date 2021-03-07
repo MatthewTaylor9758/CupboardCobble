@@ -26,6 +26,7 @@ def react_root(path):
     return app.send_static_file('index.html')
 
 # The above is apparently how you tie the flask server to the react-redux front end
+# Have to set up CORS next (use FFStockpile for reference)
 
 
 
