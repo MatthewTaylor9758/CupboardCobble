@@ -16,7 +16,6 @@ function App() {
   //     headers: {
   //       'Content-Type': 'application/json'
   //     },
-
   //   })
   //   let response = await res.json();
   //   console.log(response);
