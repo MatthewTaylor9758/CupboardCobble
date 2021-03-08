@@ -6,10 +6,12 @@ import os
 # the SQLAlchemy object and the Model classes I create, based on the base "Model" class
 # provided by the SQLAlchemy object, into here) The line below is the new line used
 from .models import db, User, Food, Pantry
+from .api.api_test import api_test
 
 app = Flask(__name__)
 
 app.config.from_object(Config)
+app.register_blueprint(api_test, url_prefix='/api/tests')
 db.init_app(app)
 Migrate(app, db)
 

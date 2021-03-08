@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 function SplashPage () {
 
   const makeRequest = async () => {
-    let res = await fetch('/backend/app/api/tests')
+    let res = await fetch('/api/tests')
   }
 
   return (
