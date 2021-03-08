@@ -15,6 +15,7 @@ alembic = "*"
 flask-migrate = "*"
 werkzeug = "*"
 gunicorn = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,6 +1,7 @@
 from flask import Flask
 from config import Config
 from flask_migrate import Migrate
+from flask_cors import CORS
 import os
 # from flask_sqlalchemy import SQLAlchemy (don't need this since I am going to import
 # the SQLAlchemy object and the Model classes I create, based on the base "Model" class
@@ -14,8 +15,18 @@ app.config.from_object(Config)
 app.register_blueprint(api_test, url_prefix='/api/tests')
 db.init_app(app)
 Migrate(app, db)
+CORS(app)
 
 
+# *** for possible addiition later on ***
+# @app.after_request
+# def inject_csrf_token(response):
+#     response.set_cookie('csrf_token',
+#         generate_csrf(),
+#         secure=True if os.environ.get('FLASK_ENV') else False,
+#         samesite='Strict' if os.environ.get('FLASK_ENV') else None,
+#         httponly=True)
+#     return response
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
