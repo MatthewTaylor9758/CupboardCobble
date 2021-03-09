@@ -4,7 +4,7 @@ import NavBar from '../tools/Navbar';
 function LoginPage() {
   return (
     <>
-
+      <NavBar />
     </>
   )
 }

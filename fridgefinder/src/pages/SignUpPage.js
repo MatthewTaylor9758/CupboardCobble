@@ -4,7 +4,7 @@ import NavBar from '../tools/Navbar'
 function SignUpPage() {
   return (
     <>
-
+      <NavBar />
     </>
   )
 }
