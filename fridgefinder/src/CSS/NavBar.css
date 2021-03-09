@@ -1,0 +1,22 @@
+#navbar {
+  position: sticky;
+  width: 100%;
+  max-height: 64px;
+}
+
+#navbar_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navbar_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
