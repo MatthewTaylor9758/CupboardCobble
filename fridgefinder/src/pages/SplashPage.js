@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import NavBar from '../tools/Navbar';
 
 function SplashPage () {
 
@@ -22,6 +22,7 @@ function SplashPage () {
 
   return (
     <>
+      <NavBar />
       <h1>
         This is the splash page.
       </h1>
