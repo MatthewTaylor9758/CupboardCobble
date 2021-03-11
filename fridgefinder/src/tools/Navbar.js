@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { makeStyles, Card, Button, Typography, AppBar, Toolbar, Grid, Modal } from '@material-ui/core';
 import '../CSS/NavBar.css';
 
+// this is just a test
+
 function NavBar() {
   return (
     <>
