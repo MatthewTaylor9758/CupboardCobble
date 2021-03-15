@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import NavBar from '../tools/Navbar';
+import { makeStyles, Card, Button, Typography, Grid } from '@material-ui/core';
 
 function SplashPage () {
 
   const makeRequest = async () => {
     let res = await fetch('/api/tests')
-  }
+  };
 
   const makeOtherRequest = async () => {
     let res = await fetch('https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3', {
@@ -18,7 +19,7 @@ function SplashPage () {
     })
     let res2 = await res.json();
     console.log(res2);
-  }
+  };
 
   return (
     <>
