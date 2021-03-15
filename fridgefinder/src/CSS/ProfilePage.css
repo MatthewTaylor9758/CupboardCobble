@@ -1,0 +1,14 @@
+#fridge_field {
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  background: linear-gradient(blue, white);
+  display: flex;
+  justify-content: center;
+}
+
+#recipe_field {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 0, 255, .4), white)
+}
