@@ -7,21 +7,6 @@ import SignUpPage from './pages/SignUpPage';
 import ProfilePage from './pages/ProfilePage';
 
 function App() {
-  /*
-  Will be making my own proxy in Flask when I get there, but for now I am using the
-  one I have listed on the line 10(cors-anywhere.herokuapp.com)
-  */
-  // const makeRequest = async () => {
-  //   let res = await fetch('https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3', {
-  //     method: 'get',
-  //     // mode: '*cors',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //   })
-  //   let response = await res.json();
-  //   console.log(response);
-  // }
 
   return (
     <BrowserRouter>
